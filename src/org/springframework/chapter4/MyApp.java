@@ -12,6 +12,9 @@ public class MyApp {
     Coach coach = context.getBean("myCoach", Coach.class);
     //call methods of the bean
     System.out.println(coach.getDailyWorkout());
+
+    // methods for fortune
+    System.out.println(coach.getDailyFortune());
     // close the context
     context.close();
   }

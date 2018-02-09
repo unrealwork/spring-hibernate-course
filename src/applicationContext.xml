@@ -2,6 +2,18 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-  <bean id="myCoach" class="org.springframework.chapter4.SwimmingCoach">
+
+  <bean id="myCoach" class="org.springframework.chapter4.TrackCoach">
+    <!--set up constructor injection-->
+    <constructor-arg ref="myFortuneService"/>
+  </bean>
+
+  <!--define the dependency-->
+  <bean id="myFortuneService" class="org.springframework.chapter4.HappyFortuneService">
+  </bean>
+
+  <!--setter injection usage-->
+  <bean id="cricketCoach" class="org.springframework.chapter4.CricketCoach">
+    <property name="fortuneService" ref="myFortuneService"/>
   </bean>
 </beans>
