@@ -1,5 +1,6 @@
-package org.springframework.chapter4;
+package org.springframework.chapter4.apps;
 
+import org.springframework.chapter4.models.coach.Coach;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MyApp {

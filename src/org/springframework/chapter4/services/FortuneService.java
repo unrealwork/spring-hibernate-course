@@ -1,4 +1,4 @@
-package org.springframework.chapter4;
+package org.springframework.chapter4.services;
 
 public interface FortuneService {
 

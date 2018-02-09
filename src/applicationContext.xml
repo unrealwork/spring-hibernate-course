@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-  <bean id="myCoach" class="org.springframework.chapter4.TrackCoach">
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+  <context:property-placeholder location="classpath:sport.properties"/>
+  <bean id="myCoach" class="org.springframework.chapter4.models.coach.TrackCoach">
     <!--set up constructor injection-->
     <constructor-arg ref="myFortuneService"/>
   </bean>
 
   <!--define the dependency-->
-  <bean id="myFortuneService" class="org.springframework.chapter4.HappyFortuneService">
+  <bean id="myFortuneService" class="org.springframework.chapter4.services.HappyFortuneService">
+  </bean>
+
+  <!--random fortune-->
+  <bean id="randomFortuneService"
+    class="org.springframework.chapter4.services.RandomFortuneService">
   </bean>
 
   <!--setter injection usage-->
-  <bean id="cricketCoach" class="org.springframework.chapter4.CricketCoach">
+  <bean id="cricketCoach" class="org.springframework.chapter4.models.coach.CricketCoach">
     <property name="fortuneService" ref="myFortuneService"/>
+    <!--injecting literal values-->
+    <property name="emailAddress" value="${foo.email}"/>
+    <property name="team" value="${foo.team}"/>
+  </bean>
+
+  <bean id="trackCoach" class="org.springframework.chapter4.models.coach.TrackCoach">
+    <constructor-arg ref="randomFortuneService"/>
   </bean>
 </beans>

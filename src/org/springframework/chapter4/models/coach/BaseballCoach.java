@@ -1,4 +1,6 @@
-package org.springframework.chapter4;
+package org.springframework.chapter4.models.coach;
+
+import org.springframework.chapter4.services.FortuneService;
 
 public class BaseballCoach implements Coach {
 
