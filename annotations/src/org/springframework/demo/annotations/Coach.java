@@ -1,4 +1,4 @@
-package org.springframework.annotations;
+package org.springframework.demo.annotations;
 
 public interface Coach {
 

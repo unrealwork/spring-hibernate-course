@@ -1,12 +1,21 @@
-package org.springframework.annotations;
+package org.springframework.demo.annotations;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AnnotationDemoApp {
+
   public static void main(String[] args) {
-    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+
+    //Create context
+    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+        "annotations-app-context.xml");
     Coach coach = context.getBean("tennisCoach", Coach.class);
+
+    // call methods
     System.out.println(coach.getDailyWorkout());
+    System.out.println(coach.getDailyFortune());
+
+    //close context
     context.close();
   }
 }

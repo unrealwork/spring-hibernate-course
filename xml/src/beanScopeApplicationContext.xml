@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--define the dependency-->
-    <bean id="myFortuneService" class="org.springframework.chapter4.services.HappyFortuneService">
-    </bean>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <!--define the dependency-->
+  <bean id="myFortuneService" class="org.springframework.chapter4.services.HappyFortuneService">
+  </bean>
 
-    <bean id="myCoach" class="org.springframework.chapter4.models.coach.TrackCoach"
-          scope="prototype"
-          init-method="doMyStartupStuff"
-          destroy-method="doMyCleanStuff">
-        <!--set up constructor injection-->
-        <constructor-arg ref="myFortuneService"/>
-    </bean>
+  <bean id="myCoach" class="org.springframework.chapter4.models.coach.TrackCoach"
+    scope="prototype"
+    init-method="doMyStartupStuff"
+    destroy-method="doMyCleanStuff">
+    <!--set up constructor injection-->
+    <constructor-arg ref="myFortuneService"/>
+  </bean>
 </beans>
