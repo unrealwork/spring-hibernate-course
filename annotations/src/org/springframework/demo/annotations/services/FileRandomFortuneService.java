@@ -20,7 +20,6 @@ public class FileRandomFortuneService implements FortuneService {
   private String fileName;
 
   public FileRandomFortuneService() {
-    System.out.println("file");
   }
 
   @Override
