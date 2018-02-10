@@ -8,7 +8,7 @@ public class AnnotationScopeBeanDemoApp {
 
   public static void main(String[] args) {
     //load spting config file
-    ApplicationContext context
+    ClassPathXmlApplicationContext context
         = new ClassPathXmlApplicationContext("annotations-app-context.xml");
     //retrieve bean from spring
     Coach coach = context.getBean("tennisCoach", Coach.class);
@@ -23,5 +23,8 @@ public class AnnotationScopeBeanDemoApp {
     System.out.println("The same 4objects: " + result);
     System.out.println("Memory location for coach: " + coach);
     System.out.println("Memory location for alphaCoach: " + alphaCoach);
+
+    //close context
+    context.close();
   }
 }
