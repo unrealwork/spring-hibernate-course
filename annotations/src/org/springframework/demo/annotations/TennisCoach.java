@@ -30,8 +30,14 @@ public class TennisCoach implements Coach {
   }
 
 
-  @Autowired
+  /*@Autowired
   public void setService(FortuneService service) {
+    System.out.println("Tennis coach: set up fortune service");
+    this.service = service;
+  }*/
+
+  @Autowired
+  public void doSomeCrazyStuff(FortuneService service) {
     System.out.println("Tennis coach: set up fortune service");
     this.service = service;
   }
