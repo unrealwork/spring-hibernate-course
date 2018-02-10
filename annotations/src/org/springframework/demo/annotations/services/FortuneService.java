@@ -1,4 +1,4 @@
-package org.springframework.demo.annotations;
+package org.springframework.demo.annotations.services;
 
 public interface FortuneService {
 

@@ -1,12 +1,16 @@
-package org.springframework.demo.annotations;
+package org.springframework.demo.annotations.models;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.demo.annotations.services.FortuneService;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach {
 
+  @Autowired
+  @Qualifier("fileRandomFortuneService")
   private FortuneService service;
 
   public TennisCoach() {
@@ -36,9 +40,9 @@ public class TennisCoach implements Coach {
     this.service = service;
   }*/
 
-  @Autowired
+  /*@Autowired
   public void doSomeCrazyStuff(FortuneService service) {
     System.out.println("Tennis coach: set up fortune service");
     this.service = service;
-  }
+  }*/
 }

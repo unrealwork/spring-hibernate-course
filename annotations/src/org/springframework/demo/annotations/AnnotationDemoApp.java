@@ -1,6 +1,7 @@
 package org.springframework.demo.annotations;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.demo.annotations.models.Coach;
 
 public class AnnotationDemoApp {
 
