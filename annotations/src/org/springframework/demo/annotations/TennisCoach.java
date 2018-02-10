@@ -9,10 +9,14 @@ public class TennisCoach implements Coach {
 
   private FortuneService service;
 
-  @Autowired
+  public TennisCoach() {
+    System.out.println("Tennis coach: default constructor");
+  }
+
+  /*@Autowired
   public TennisCoach(FortuneService service) {
     this.service = service;
-  }
+  }*/
 
 
   @Override
@@ -23,5 +27,12 @@ public class TennisCoach implements Coach {
   @Override
   public String getDailyFortune() {
     return service.getFortune();
+  }
+
+
+  @Autowired
+  public void setService(FortuneService service) {
+    System.out.println("Tennis coach: set up fortune service");
+    this.service = service;
   }
 }
